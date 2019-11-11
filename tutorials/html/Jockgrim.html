@@ -1,0 +1,166 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Jockgrim</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2019-04-18"><meta name="DC.source" content="Jockgrim.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#2">Running Hydraulic Day Time Simulation</a></li><li><a href="#3">Load a network</a></li><li><a href="#4">Initialize Network</a></li><li><a href="#5">Run hydraulic analysis of a network</a></li><li><a href="#6">This Section analyzises the computed hydraulic results</a></li></ul></div><pre class="codeinput">clear;
+close <span class="string">all</span>;
+clc;
+
+start_toolkit;
+</pre><pre class="codeoutput">EPANET-MATLAB Toolkit Paths Loaded.
+</pre><h2 id="2">Running Hydraulic Day Time Simulation</h2><h2 id="3">Load a network</h2><p>inpfile = input('Enter your INP-File from choosen directory: '); % Jockgrim_Standard.inp d = epanet(inpfile);</p><pre class="codeinput">inp_file = input(<span class="string">'Enter the INP-File from choosen directory: '</span>,<span class="string">'s'</span>);
+
+G = epanet(inp_file);
+</pre><pre class="codeoutput error">Error using input
+Cannot call INPUT from EVALC.
+
+Error in Jockgrim (line 12)
+inp_file = input('Enter the INP-File from choosen directory: ','s');
+</pre><h2 id="4">Initialize Network</h2><pre class="codeinput"><span class="comment">% Initialize Nodes (Junction, Reservoir, Tank)</span>
+BaseDemand_first = G.NodeBaseDemands{1,1}';  <span class="comment">% Basis Verbrauch (1. Messdatenreihe)</span>
+
+Pattern_Choice = menu(<span class="string">'Which Pattern do you want to run?'</span>,<span class="string">'Kon'</span>,<span class="string">'Messung'</span>,<span class="string">'New'</span>);
+
+Pattern_Messung = G.Pattern(Pattern_Choice,:); <span class="comment">% Pattern Messung (Multiplier x 24 hrs)</span>
+
+<span class="comment">% Changing Initial Tank Level</span>
+Temp_NodeTankInitialLevel = G.getNodeTankInitialLevel;
+TankIndex = G.getNodeTankIndex  <span class="comment">% Index of Tanks</span>
+Temp_NodeTankInitialLevel(1,TankIndex)= [5.0 5.4 6.0]
+G.setNodeTankInitialLevel(Temp_NodeTankInitialLevel);
+
+<span class="comment">% for i=1:length(G.Pattern(Pattern_Choice,:));</span>
+<span class="comment">% end</span>
+
+<span class="comment">% Initialize Links (Pipes, Pumps, Valves)</span>
+</pre><h2 id="5">Run hydraulic analysis of a network</h2><pre class="codeinput"><span class="comment">% Set simulation time duration</span>
+hrs = 1;
+G.setTimeSimulationDuration(hrs*3600);
+
+<span class="comment">% Hydraulic analysis using ENepanet binary file (fastest)</span>
+<span class="comment">% (This function ignores events)</span>
+hyd_res_1 = G.getComputedTimeSeries
+</pre><h2 id="6">This Section analyzises the computed hydraulic results</h2><pre class="codeinput">G.getStatistic <span class="comment">% Number of iterations to reach solution (iter) and convergence error in solution (relerr)</span>
+
+G.getLinkEnergy; <span class="comment">% recieved energy consumption in the considered time frame</span>
+</pre><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+clear;
+close all;
+clc;
+
+start_toolkit;
+
+%% Running Hydraulic Day Time Simulation
+
+%% Load a network
+% inpfile = input('Enter your INP-File from choosen directory: '); % Jockgrim_Standard.inp
+% d = epanet(inpfile);
+inp_file = input('Enter the INP-File from choosen directory: ','s');
+
+G = epanet(inp_file);
+%% Initialize Network
+
+% Initialize Nodes (Junction, Reservoir, Tank)
+BaseDemand_first = G.NodeBaseDemands{1,1}';  % Basis Verbrauch (1. Messdatenreihe)
+
+Pattern_Choice = menu('Which Pattern do you want to run?','Kon','Messung','New'); 
+
+Pattern_Messung = G.Pattern(Pattern_Choice,:); % Pattern Messung (Multiplier x 24 hrs)
+
+% Changing Initial Tank Level
+Temp_NodeTankInitialLevel = G.getNodeTankInitialLevel;
+TankIndex = G.getNodeTankIndex  % Index of Tanks
+Temp_NodeTankInitialLevel(1,TankIndex)= [5.0 5.4 6.0]
+G.setNodeTankInitialLevel(Temp_NodeTankInitialLevel);
+
+% for i=1:length(G.Pattern(Pattern_Choice,:));    
+% end
+
+% Initialize Links (Pipes, Pumps, Valves)
+%% Run hydraulic analysis of a network
+
+% Set simulation time duration
+hrs = 1;
+G.setTimeSimulationDuration(hrs*3600);
+
+% Hydraulic analysis using ENepanet binary file (fastest)
+% (This function ignores events)
+hyd_res_1 = G.getComputedTimeSeries
+
+
+%% This Section analyzises the computed hydraulic results
+
+G.getStatistic % Number of iterations to reach solution (iter) and convergence error in solution (relerr)
+               
+G.getLinkEnergy; % recieved energy consumption in the considered time frame
+
+
+
+
+##### SOURCE END #####
+--></body></html>

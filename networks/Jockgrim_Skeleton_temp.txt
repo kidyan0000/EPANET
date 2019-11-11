@@ -1,0 +1,294 @@
+  Page 1                                    Mon Nov 11 19:10:38 2019
+
+  ******************************************************************
+  *                           E P A N E T                          *
+  *                   Hydraulic and Water Quality                  *
+  *                   Analysis for Pipe Networks                   *
+  *                         Version 2.1                            *
+  ******************************************************************
+  
+  Analysis begun Mon Nov 11 19:10:38 2019
+
+   
+  Hydraulic Status:
+  -----------------------------------------------------------------------
+     0:00:00: Balanced after 12 trials
+     0:00:00: Reservoir A541 is emptying
+     0:00:00: Reservoir A522 is emptying
+     0:00:00: Tank A510 is filling at 5.50 m
+     0:00:00: Tank A505 is filling at 5.50 m
+     0:00:00: Tank A516 is emptying at 6.50 m
+     0:00:00: Pump P1 open
+     0:00:00: Pump P2 open
+     0:00:00: Pump P3 open
+     0:00:00: Pump P4 open
+     0:00:00: Pump P5 open
+     0:00:00: Pump P6 open
+     0:00:00: Pump P7 open
+     0:00:00: Pump P9 open
+     0:00:00: Pump P10 open
+   
+     0:50:08: Balanced after 7 trials
+     0:50:08: Tank A516 is closed at 6.00 m
+     0:50:08: Pipe L6218 changed from open to temporarily closed
+     0:50:08: Pipe L6219 changed from open to temporarily closed
+   
+     1:00:00: Balanced after 3 trials
+   
+     2:00:00: Balanced after 4 trials
+   
+     3:00:00: Balanced after 6 trials
+     3:00:00: Reservoir A541 is closed
+     3:00:00: CV F1 changed from open to closed
+     3:00:00: CV F2 changed from open to closed
+   
+     4:00:00: Balanced after 6 trials
+     4:00:00: Tank A516 is filling at 6.00 m
+     4:00:00: Pipe L6218 changed from temporarily closed to open
+     4:00:00: Pipe L6219 changed from temporarily closed to open
+   
+     5:00:00: Balanced after 8 trials
+     5:00:00: PRV R1 changed from active to closed
+   
+     6:00:00: Balanced after 3 trials
+   
+     7:00:00: Balanced after 5 trials
+     7:00:00: Tank A516 is emptying at 6.39 m
+   
+     8:00:00: Balanced after 4 trials
+   
+     8:24:08: Balanced after 7 trials
+     8:24:08: Reservoir A541 is emptying
+     8:24:08: Tank A510 is emptying at 10.52 m
+     8:24:08: Tank A516 is closed at 6.00 m
+     8:24:08: CV F1 changed from closed to open
+     8:24:08: CV F2 changed from closed to open
+     8:24:08: Pipe L6218 changed from open to temporarily closed
+     8:24:08: Pipe L6219 changed from open to temporarily closed
+   
+     9:00:00: Balanced after 3 trials
+   
+    10:00:00: Balanced after 3 trials
+   
+    11:00:00: Balanced after 3 trials
+   
+    12:00:00: Balanced after 3 trials
+    12:00:00: Tank A510 is filling at 10.01 m
+   
+    13:00:00: Balanced after 3 trials
+   
+    14:00:00: Balanced after 9 trials
+    14:00:00: Reservoir A541 is closed
+    14:00:00: CV F2 changed from open to closed
+    14:00:00: CV F9 changed from open to closed
+   
+    15:00:00: Balanced after 3 trials
+   
+  WARNING: Pump P8 closed because cannot deliver head at 15:00:00 hrs.
+  WARNING: Pump P9 closed because cannot deliver head at 15:00:00 hrs.
+  WARNING: Pump P10 closed because cannot deliver head at 15:00:00 hrs.
+  
+    16:00:00: Balanced after 2 trials
+   
+    17:00:00: Balanced after 6 trials
+    17:00:00: Reservoir A541 is emptying
+    17:00:00: CV F2 changed from closed to open
+    17:00:00: CV F9 changed from closed to open
+   
+    18:00:00: Balanced after 2 trials
+   
+    19:00:00: Balanced after 3 trials
+    19:00:00: Tank A510 is emptying at 10.84 m
+   
+    20:00:00: Balanced after 2 trials
+   
+    21:00:00: Balanced after 9 trials
+    21:00:00: Tank A510 is filling at 10.80 m
+    21:00:00: CV F2 changed from open to closed
+   
+    22:00:00: Balanced after 10 trials
+    22:00:00: Reservoir A541 is closed
+    22:00:00: Tank A516 is filling at 6.00 m
+    22:00:00: CV F9 changed from open to closed
+    22:00:00: Pipe L6218 changed from temporarily closed to open
+    22:00:00: Pipe L6219 changed from temporarily closed to open
+   
+    23:00:00: Balanced after 3 trials
+   
+  WARNING: Pump P8 closed because cannot deliver head at 23:00:00 hrs.
+  WARNING: Pump P9 closed because cannot deliver head at 23:00:00 hrs.
+  WARNING: Pump P10 closed because cannot deliver head at 23:00:00 hrs.
+  
+    24:00:00: Balanced after 3 trials
+   
+    25:00:00: Balanced after 2 trials
+   
+    26:00:00: Balanced after 102 trials
+   
+  WARNING: Maximum trials exceeded at 26:00:00 hrs. System may be unstable.
+  WARNING: Pump P8 closed because cannot deliver head at 26:00:00 hrs.
+  WARNING: Pump P9 closed because cannot deliver head at 26:00:00 hrs.
+  WARNING: Pump P10 closed because cannot deliver head at 26:00:00 hrs.
+  
+    27:00:00: Balanced after 103 trials
+    27:00:00: Pump P4 changed from open to closed because cannot deliver head
+    27:00:00: Pump P5 changed from open to closed because cannot deliver head
+   
+  WARNING: Maximum trials exceeded at 27:00:00 hrs. System may be unstable.
+  WARNING: Pump P4 closed because cannot deliver head at 27:00:00 hrs.
+  WARNING: Pump P5 closed because cannot deliver head at 27:00:00 hrs.
+  
+    28:00:00: Balanced after 103 trials
+   
+  WARNING: Maximum trials exceeded at 28:00:00 hrs. System may be unstable.
+  WARNING: Pump P4 closed because cannot deliver head at 28:00:00 hrs.
+  WARNING: Pump P5 closed because cannot deliver head at 28:00:00 hrs.
+  WARNING: Pump P8 closed because cannot deliver head at 28:00:00 hrs.
+  WARNING: Pump P9 closed because cannot deliver head at 28:00:00 hrs.
+  WARNING: Pump P10 closed because cannot deliver head at 28:00:00 hrs.
+  
+    29:00:00: Balanced after 103 trials
+   
+  WARNING: Maximum trials exceeded at 29:00:00 hrs. System may be unstable.
+  WARNING: Pump P4 closed because cannot deliver head at 29:00:00 hrs.
+  WARNING: Pump P5 closed because cannot deliver head at 29:00:00 hrs.
+  
+    30:00:00: Balanced after 103 trials
+   
+  WARNING: Maximum trials exceeded at 30:00:00 hrs. System may be unstable.
+  WARNING: Pump P4 closed because cannot deliver head at 30:00:00 hrs.
+  WARNING: Pump P5 closed because cannot deliver head at 30:00:00 hrs.
+  
+    31:00:00: Balanced after 103 trials
+   
+  WARNING: Maximum trials exceeded at 31:00:00 hrs. System may be unstable.
+  WARNING: Pump P4 closed because cannot deliver head at 31:00:00 hrs.
+  WARNING: Pump P5 closed because cannot deliver head at 31:00:00 hrs.
+  
+    32:00:00: Balanced after 103 trials
+    32:00:00: Tank A505 is emptying at 35.60 m
+    32:00:00: Tank A516 is emptying at 9.34 m
+   
+  WARNING: Maximum trials exceeded at 32:00:00 hrs. System may be unstable.
+  WARNING: Pump P4 closed because cannot deliver head at 32:00:00 hrs.
+  WARNING: Pump P5 closed because cannot deliver head at 32:00:00 hrs.
+  
+    33:00:00: Balanced after 103 trials
+   
+  WARNING: Maximum trials exceeded at 33:00:00 hrs. System may be unstable.
+  WARNING: Pump P4 closed because cannot deliver head at 33:00:00 hrs.
+  WARNING: Pump P5 closed because cannot deliver head at 33:00:00 hrs.
+  WARNING: Pump P8 closed because cannot deliver head at 33:00:00 hrs.
+  WARNING: Pump P9 closed because cannot deliver head at 33:00:00 hrs.
+  WARNING: Pump P10 closed because cannot deliver head at 33:00:00 hrs.
+  
+    34:00:00: Balanced after 103 trials
+   
+  WARNING: Maximum trials exceeded at 34:00:00 hrs. System may be unstable.
+  WARNING: Pump P4 closed because cannot deliver head at 34:00:00 hrs.
+  WARNING: Pump P5 closed because cannot deliver head at 34:00:00 hrs.
+  WARNING: Pump P8 closed because cannot deliver head at 34:00:00 hrs.
+  WARNING: Pump P9 closed because cannot deliver head at 34:00:00 hrs.
+  WARNING: Pump P10 closed because cannot deliver head at 34:00:00 hrs.
+  
+    35:00:00: Balanced after 103 trials
+    35:00:00: Tank A510 is emptying at 15.60 m
+   
+  WARNING: Maximum trials exceeded at 35:00:00 hrs. System may be unstable.
+  WARNING: Pump P4 closed because cannot deliver head at 35:00:00 hrs.
+  WARNING: Pump P5 closed because cannot deliver head at 35:00:00 hrs.
+  
+    36:00:00: Balanced after 103 trials
+    36:00:00: Tank A510 is filling at 15.58 m
+    36:00:00: Tank A505 is filling at 34.99 m
+    36:00:00: Tank A516 is filling at 8.61 m
+   
+  WARNING: Maximum trials exceeded at 36:00:00 hrs. System may be unstable.
+  WARNING: Pump P4 closed because cannot deliver head at 36:00:00 hrs.
+  WARNING: Pump P5 closed because cannot deliver head at 36:00:00 hrs.
+  
+    37:00:00: Balanced after 103 trials
+   
+  WARNING: Maximum trials exceeded at 37:00:00 hrs. System may be unstable.
+  WARNING: Pump P4 closed because cannot deliver head at 37:00:00 hrs.
+  WARNING: Pump P5 closed because cannot deliver head at 37:00:00 hrs.
+  
+    38:00:00: Balanced after 103 trials
+   
+  WARNING: Maximum trials exceeded at 38:00:00 hrs. System may be unstable.
+  WARNING: Pump P4 closed because cannot deliver head at 38:00:00 hrs.
+  WARNING: Pump P5 closed because cannot deliver head at 38:00:00 hrs.
+  
+    39:00:00: Balanced after 103 trials
+   
+  WARNING: Maximum trials exceeded at 39:00:00 hrs. System may be unstable.
+  WARNING: Pump P4 closed because cannot deliver head at 39:00:00 hrs.
+  WARNING: Pump P5 closed because cannot deliver head at 39:00:00 hrs.
+  
+    40:00:00: Balanced after 103 trials
+   
+  WARNING: Maximum trials exceeded at 40:00:00 hrs. System may be unstable.
+  WARNING: Pump P4 closed because cannot deliver head at 40:00:00 hrs.
+  WARNING: Pump P5 closed because cannot deliver head at 40:00:00 hrs.
+  
+    41:00:00: Balanced after 103 trials
+    41:00:00: Tank A505 is emptying at 35.90 m
+    41:00:00: Tank A516 is emptying at 9.26 m
+   
+  WARNING: Maximum trials exceeded at 41:00:00 hrs. System may be unstable.
+  WARNING: Pump P4 closed because cannot deliver head at 41:00:00 hrs.
+  WARNING: Pump P5 closed because cannot deliver head at 41:00:00 hrs.
+  WARNING: Pump P8 closed because cannot deliver head at 41:00:00 hrs.
+  WARNING: Pump P9 closed because cannot deliver head at 41:00:00 hrs.
+  WARNING: Pump P10 closed because cannot deliver head at 41:00:00 hrs.
+  
+    42:00:00: Balanced after 103 trials
+    42:00:00: Tank A505 is filling at 35.87 m
+    42:00:00: Tank A516 is filling at 9.24 m
+   
+  WARNING: Maximum trials exceeded at 42:00:00 hrs. System may be unstable.
+  WARNING: Pump P4 closed because cannot deliver head at 42:00:00 hrs.
+  WARNING: Pump P5 closed because cannot deliver head at 42:00:00 hrs.
+  
+    43:00:00: Balanced after 103 trials
+    43:00:00: Tank A505 is emptying at 35.89 m
+    43:00:00: Tank A516 is emptying at 9.25 m
+   
+  WARNING: Maximum trials exceeded at 43:00:00 hrs. System may be unstable.
+  WARNING: Pump P4 closed because cannot deliver head at 43:00:00 hrs.
+  WARNING: Pump P5 closed because cannot deliver head at 43:00:00 hrs.
+  
+    44:00:00: Balanced after 103 trials
+    44:00:00: Tank A510 is emptying at 16.38 m
+   
+  WARNING: Maximum trials exceeded at 44:00:00 hrs. System may be unstable.
+  WARNING: Pump P4 closed because cannot deliver head at 44:00:00 hrs.
+  WARNING: Pump P5 closed because cannot deliver head at 44:00:00 hrs.
+  
+    45:00:00: Balanced after 103 trials
+    45:00:00: Tank A510 is filling at 16.37 m
+    45:00:00: Tank A505 is filling at 35.68 m
+    45:00:00: Tank A516 is filling at 9.08 m
+   
+  WARNING: Maximum trials exceeded at 45:00:00 hrs. System may be unstable.
+  WARNING: Pump P4 closed because cannot deliver head at 45:00:00 hrs.
+  WARNING: Pump P5 closed because cannot deliver head at 45:00:00 hrs.
+  WARNING: Pump P8 closed because cannot deliver head at 45:00:00 hrs.
+  WARNING: Pump P9 closed because cannot deliver head at 45:00:00 hrs.
+  WARNING: Pump P10 closed because cannot deliver head at 45:00:00 hrs.
+  
+    46:00:00: Balanced after 103 trials
+   
+  WARNING: Maximum trials exceeded at 46:00:00 hrs. System may be unstable.
+  WARNING: Pump P4 closed because cannot deliver head at 46:00:00 hrs.
+  WARNING: Pump P5 closed because cannot deliver head at 46:00:00 hrs.
+  
+    47:00:00: Balanced after 103 trials
+   
+  WARNING: Maximum trials exceeded at 47:00:00 hrs. System may be unstable.
+  WARNING: Pump P4 closed because cannot deliver head at 47:00:00 hrs.
+  WARNING: Pump P5 closed because cannot deliver head at 47:00:00 hrs.
+  
+    48:00:00: Balanced after 103 trials
+   
+  WARNING: Maxim
