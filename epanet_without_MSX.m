@@ -14,6 +14,7 @@ sensor_index = G.getNodeIndex(sensor_id); % Retrieves the index of a node with a
 t_d= 1/12; % days
 G.setTimeSimulationDuration(t_d*24*60*60); % Set Simulation duration of 2 Days
 G.setTimeHydraulicStep(0.1);
+G.setTimeReportingStep(900);
 % line 2087: totalsteps=obj.getTimeSimulationDuration/obj.getTimeHydraulicStep
 % G.setTimePatternStep(0.1);
 
@@ -71,5 +72,3 @@ for i = 1:Ns
     plot(Q{i})
 end
 toc
-
-G.getTimeHTime

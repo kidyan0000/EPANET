@@ -9,17 +9,29 @@ start_toolkit;
 % inpfile = input('Enter your INP-File from choosen directory: '); % Jockgrim_Standard.inp
 % d = epanet(inpfile);
 % Jockgrim_Skeleton.inp
-inp_file = input('Enter the INP-File from choosen directory: ','s');
-G = epanet(inp_file)
+% inp_file = input('Enter the INP-File from choosen directory: ','s');
+G = epanet('Jockgrim_Skeleton.inp');
+
 %% Pump Curve of all assemblied pumps
-for s = 1:G.getLinkPumpCount
-   pump_curve = G.getCurveValue(s);
-   Q  = pump_curve(:,1);
-   H  = pump_curve(:,2);
-   calc_pumpcurve(Q,H);
-   s=s+1;
-   hold on
-end
+num_pump = G.getLinkPumpCount;
+id_pump = G.getLinkPumpNameID;
+index_pump = G.getLinkPumpIndex;
+
+% for s = 1:num_pump
+%    pump_curve = G.getCurveValue(s);
+%    Q  = pump_curve(:,1);
+%    H  = pump_curve(:,2);
+%    calc_pumpcurve(Q,H);
+% 
+%    hold on
+% end
+
+s = 1;
+pump_curve = G.getCurveValue(s);
+Q  = pump_curve(:,1);
+H  = pump_curve(:,2);
+calc_pumpcurve(Q,H);
+   
 %% Initialize Network
 % Initialize Nodes (Junction, Reservoir, Tank)
 BaseDemand_first = G.NodeBaseDemands{1,1}';  % Basis Verbrauch (1. Messdatenreihe)
@@ -34,8 +46,6 @@ TankIndex = G.getNodeTankIndex;  % Index of Tanks
 Temp_NodeTankInitialLevel(1,TankIndex)= [5.0 5.4 6.0];
 G.setNodeTankInitialLevel(Temp_NodeTankInitialLevel);
 
-% for i=1:length(G.Pattern(Pattern_Choice,:));    
-% end
 
 % Initialize Links (Pipes, Pumps, Valves)
 
@@ -75,46 +85,56 @@ G.setTimeSimulationDuration(hrs*3600);
 % G.closeHydraulicAnalysis;
 % toc
 
+%% This Section analysises the computed demand
+% dem_res = G.getNodeActualDemand;  %Retrieves the computed value of all actual demands
+dem_node = G.getBinComputedNodeDemand;
+flow_node = G.getBinComputedLinkFlow;
+% test to plot P7 > id = 5431
+figure;
+plot(1:25, flow_node(:,5431));
+
+
+
 %% This Section analyzises the computed hydraulic results
 
-G.getStatistic % Number of iterations to reach solution (iter) and convergence error in solution (relerr)
-               
-G.getLinkEnergy; % recieved energy consumption in the considered time frame
-
-%% serveral Hydraulic Plots
-% Change time-stamps from seconds to hours
-hrs_time = hyd_res.Time/3600;
-
-node_indices = [1, 3, 5];
-node_names = G.getNodeNameID(node_indices)
-for i=node_indices
-    figure;
-    plot(hrs_time, hyd_res.Pressure(:,i));
-    title(['Pressure for the node id "', G.getNodeNameID{i},'"']);
-    xlabel('Time (hrs)'); 
-    ylabel(['Pressure (', G.NodePressureUnits,')'])
-end
-
-% Plot water velocity for specific links
-link_indices = [4, 8, 10];
-link_names = G.getNodeNameID(link_indices)
-for i=link_indices
-    figure;
-    plot(hrs_time, hyd_res.Velocity(:,i));
-    title(['Velocity for the link id "', G.getLinkNameID{i},'"']);
-    xlabel('Time (hrs)'); 
-    ylabel(['Velocity (', G.LinkVelocityUnits,')'])
-end
-
-% Plot water flow for specific links
-link_indices = [2, 3, 9];
-for i=link_indices
-    figure;
-    plot(hrs_time, hyd_res.Flow(:,i));
-    title(['Flow for the link id "', G.getLinkNameID{i},'"']);
-    xlabel('Time (hrs)'); 
-    ylabel(['Flow (', G.LinkFlowUnits,')'])
-end
+% G.getStatistic % Number of iterations to reach solution (iter) and convergence error in solution (relerr)
+%                
+% G.getLinkEnergy; % recieved energy consumption in the considered time frame
+% 
+% %% serveral Hydraulic Plots
+% % Change time-stamps from seconds to hours
+% hrs_time = hyd_res.Time/3600;
+% 
+% node_indices = [1, 3, 5];
+% node_names = G.getNodeNameID(node_indices)
+% for i=node_indices
+%     figure;
+%     plot(hrs_time, hyd_res.Pressure(:,i));
+%     title(['Pressure for the node id "', G.getNodeNameID{i},'"']);
+%     xlabel('Time (hrs)'); 
+%     ylabel(['Pressure (', G.NodePressureUnits,')'])
+% end
+% 
+% % Plot water velocity for specific links
+% link_indices = [4, 8, 10];
+% link_names = G.getNodeNameID(link_indices)
+% for i=link_indices
+%     figure;
+%     plot(hrs_time, hyd_res.Velocity(:,i));
+%     title(['Velocity for the link id "', G.getLinkNameID{i},'"']);
+%     xlabel('Time (hrs)'); 
+%     ylabel(['Velocity (', G.LinkVelocityUnits,')'])
+% end
+% 
+% % Plot water flow for specific links
+% link_indices = [2, 3, 9];
+% for i=link_indices
+%     figure;
+%     plot(hrs_time, hyd_res.Flow(:,i));
+%     title(['Flow for the link id "', G.getLinkNameID{i},'"']);
+%     xlabel('Time (hrs)'); 
+%     ylabel(['Flow (', G.LinkFlowUnits,')'])
+% end
 
 %% End of Program
 G.unload        % unload INP-File
