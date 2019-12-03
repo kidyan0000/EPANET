@@ -26,25 +26,30 @@ index_pump = G.getLinkPumpIndex;
 %    hold on
 % end
 
-s = 1;
-pump_curve = G.getCurveValue(s);
-Q  = pump_curve(:,1);
-H  = pump_curve(:,2);
-calc_pumpcurve(Q,H);
+% s = 1;
+% pump_curve = G.getCurveValue(s);
+% Q  = pump_curve(:,1);
+% H  = pump_curve(:,2);
+% calc_pumpcurve(Q,H);
    
 %% Initialize Network
+% G.addBinControl(1)
+% G.setControls({'LINK 9 OPEN IF NODE 2 BELOW 110'})
+% c = G.getControls;
+% G.setControls(1, 'LINK 9 CLOSED IF NODE 2 ABOVE 180')
+
 % Initialize Nodes (Junction, Reservoir, Tank)
-BaseDemand_first = G.NodeBaseDemands{1,1}';  % Basis Verbrauch (1. Messdatenreihe)
-
-Pattern_Choice = menu('Which Pattern do you want to run?','Kon','Messung','New'); 
-
-Pattern_Messung = G.Pattern(Pattern_Choice,:); % Pattern Messung (Multiplier x 24 hrs)
-
-% Changing Initial Tank Level
-Temp_NodeTankInitialLevel = G.getNodeTankInitialLevel;
-TankIndex = G.getNodeTankIndex;  % Index of Tanks
-Temp_NodeTankInitialLevel(1,TankIndex)= [5.0 5.4 6.0];
-G.setNodeTankInitialLevel(Temp_NodeTankInitialLevel);
+% BaseDemand_first = G.NodeBaseDemands{1,1}';  % Basis Verbrauch (1. Messdatenreihe)
+% 
+% Pattern_Choice = menu('Which Pattern do you want to run?','Kon','Messung','New'); 
+% 
+% Pattern_Messung = G.Pattern(Pattern_Choice,:); % Pattern Messung (Multiplier x 24 hrs)
+% 
+% % Changing Initial Tank Level
+% Temp_NodeTankInitialLevel = G.getNodeTankInitialLevel;
+% TankIndex = G.getNodeTankIndex;  % Index of Tanks
+% Temp_NodeTankInitialLevel(1,TankIndex)= [5.0 5.4 6.0];
+% G.setNodeTankInitialLevel(Temp_NodeTankInitialLevel);
 
 
 % Initialize Links (Pipes, Pumps, Valves)
@@ -65,7 +70,7 @@ G.setTimeSimulationDuration(hrs*3600);
 % 
 %% Hydraulic analysis using the functions ENopenH, ENinit, ENrunH, ENgetnodevalue/&ENgetlinkvalue, ENnextH, ENcloseH
 % (This function contains events)
- hyd_res = G.getComputedHydraulicTimeSeries 
+%  hyd_res = G.getComputedHydraulicTimeSeries 
 
 % Hydraulic analysis step-by-step using the functions ENopenH, ENinit, ENrunH, ENgetnodevalue/&ENgetlinkvalue, ENnextH, ENcloseH
 % (This function contains events)
@@ -86,12 +91,13 @@ G.setTimeSimulationDuration(hrs*3600);
 % toc
 
 %% This Section analysises the computed demand
-% dem_res = G.getNodeActualDemand;  %Retrieves the computed value of all actual demands
+dem_res = G.getNodeActualDemand;  %Retrieves the computed value of all actual demands
 dem_node = G.getBinComputedNodeDemand;
 flow_node = G.getBinComputedLinkFlow;
 % test to plot P7 > id = 5431
 figure;
 plot(1:25, flow_node(:,5431));
+
 
 
 
@@ -137,7 +143,14 @@ plot(1:25, flow_node(:,5431));
 % end
 
 %% End of Program
+%G.getLinkStatus(5431)
+% do some thing to change the status
+%G.getLinkStatus(5431)
+ 
+G.setReport('AsIII')    
+G.writeReport
 G.unload        % unload INP-File
+
 fprintf('End of Calculation.\n');
 % fprintf('Go to Report file %s. \n,'s');
 
